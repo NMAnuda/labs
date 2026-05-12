@@ -38,9 +38,20 @@ if ! command -v gh &> /dev/null; then
     exit 1
 fi
 
+# In CI, gh expects GH_TOKEN. Use GITHUB_TOKEN as a fallback if GH_TOKEN is unset.
+if [ -z "${GH_TOKEN:-}" ] && [ -n "${GITHUB_TOKEN:-}" ]; then
+  export GH_TOKEN="$GITHUB_TOKEN"
+fi
+
 # Ensure user is authenticated (checks GH_TOKEN env var first, then local auth)
 if ! gh auth status &> /dev/null; then
-    echo "❌ Error: Not authenticated with GitHub CLI. Set GH_TOKEN or run 'gh auth login' first."
+    if [ -n "${CI:-}" ]; then
+      echo "❌ Error: GitHub CLI is not authenticated in CI."
+      echo "   Set GH_TOKEN to a token with access to all TARGET_REPOS."
+      echo "   For this repo, configure the Actions secret: TEMPLATE_SYNC_PAT"
+    else
+      echo "❌ Error: Not authenticated with GitHub CLI. Set GH_TOKEN or run 'gh auth login' first."
+    fi
     exit 1
 fi
 

@@ -27,6 +27,17 @@ jobs:
           # Fetch full history if needed, though default 1 is usually fine
           fetch-depth: 1
 
+      - name: Validate Required Secret
+        env:
+          TEMPLATE_SYNC_PAT: ${{ secrets.TEMPLATE_SYNC_PAT }}
+        run: |
+          if [ -z "${TEMPLATE_SYNC_PAT:-}" ]; then
+            echo "❌ Missing required Actions secret: TEMPLATE_SYNC_PAT"
+            echo "   Add a Personal Access Token with access to all target repositories."
+            echo "   Settings -> Secrets and variables -> Actions -> New repository secret"
+            exit 1
+          fi
+
       - name: Run Sync Script
         env:
           # Provide the PAT to the gh CLI
