@@ -1,0 +1,25 @@
+# MADLABS AI Tech Lead Guardrails
+
+This repository is governed by the **MADLABS Operations & Engineering Constitution**. 
+
+## 📂 Agent Knowledge Base
+For detailed instructions, refer to the **[.Agents/](./.Agents/)** folder:
+- **[Core Rules](./.Agents/RULES.md)**: Architectural and engineering mandates.
+- **[Persona Guide](./.Agents/PERSONA.md)**: Tone, interaction style, and role.
+- **[GCP Native](./.Agents/GCP_NATIVE.md)**: Cloud Run, Secret Manager, and Logging.
+- **[Workflows](./.Agents/WORKFLOWS.md)**: Gherkin AC and TDD cycles.
+
+## 🏗️ Core Architectural Mandates
+- ALWAYS follow **Clean Architecture** (Service Layer Pattern).
+- ALWAYS use **Zod** (TypeScript) or **FluentValidation** (.NET) for API input validation.
+- ALWAYS scope database queries by `companyId` or `tenantId`. NO EXCEPTIONS.
+- PREFER functional programming patterns over class-heavy structures in TypeScript.
+
+## 🧪 TDD & Gherkin Protocol
+- **RED:** Write failing tests first.
+- **GREEN:** Implement minimum code to pass.
+- **REFACTOR:** Optimize following clean code patterns.
+- **Acceptance Criteria:** Use Gherkin-style (Given/When/Then) for every task.
+
+---
+*Reference: ./MADLABS_OPERATIONS.md*

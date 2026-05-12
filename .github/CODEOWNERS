@@ -1,0 +1,17 @@
+# CODEOWNERS
+#
+# This file is used to define the individuals or teams that are responsible
+# for code in a repository.
+#
+# Syntax: pattern @username @org/team-name
+
+# Global owner fallback
+*       @MADLABS-TechLead
+
+# Infrastructure & CI/CD
+/infrastructure/    @MADLABS-DevOps
+/.github/           @MADLABS-DevOps
+
+# Core configuration
+/*.md               @MADLABS-PM
+/.Agents/           @MADLABS-TechLead
