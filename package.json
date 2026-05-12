@@ -11,13 +11,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@react-three/drei": "^9.120.0",
+    "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.0.0",
-    "@react-three/postprocessing": "^2.16.0",
+    "@react-three/postprocessing": "^3.0.4",
     "@types/three": "^0.170.0",
     "clsx": "^2.1.0",
     "gsap": "^3.12.5",
-    "lucide-react": "^0.363.0",
+    "lucide-react": "^0.519.0",
     "motion": "^12.38.0",
     "ogl": "^1.0.11",
     "react": "^19.0.0",
