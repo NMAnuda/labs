@@ -105,6 +105,9 @@ const footerLinks = [
   { label: 'Start a Project', href: '#cta' },
 ];
 
+const brandMarkSrc = `${import.meta.env.BASE_URL}brand/asset-7-custom-2x.png`;
+const brandWordmarkSrc = `${import.meta.env.BASE_URL}brand/asset-1-wordmark-2x.png`;
+
 type ThemeMode = 'dark' | 'light';
 
 const getThemeMode = (): ThemeMode => {
@@ -360,8 +363,8 @@ const Overlay: React.FC = () => {
       <header className="ml-nav-wrap">
         <div className="ml-nav-shell">
           <Link to="/" className="ml-brand" aria-label="MAD LABS home">
-            <img src="/brand/asset-7-custom-2x.png" alt="" className="ml-brand-mark" />
-            <img src="/brand/asset-1-wordmark-2x.png" alt="MAD LABS" className="ml-brand-wordmark" />
+            <img src={brandMarkSrc} alt="" className="ml-brand-mark" />
+            <img src={brandWordmarkSrc} alt="MAD LABS" className="ml-brand-wordmark" />
           </Link>
 
           <nav className="ml-nav-links" aria-label="Primary">
@@ -405,7 +408,7 @@ const Overlay: React.FC = () => {
             <div ref={heroBadgeRef} className="ml-hero-visual">
               <div className="ml-hero-badge-halo" aria-hidden />
               <div className="ml-hero-badge-shell">
-                <LogoLoop logoSrc="/brand/asset-7-custom-2x.png" reducedMotion={prefersReducedMotion} />
+                <LogoLoop logoSrc={brandMarkSrc} reducedMotion={prefersReducedMotion} />
               </div>
             </div>
           </div>

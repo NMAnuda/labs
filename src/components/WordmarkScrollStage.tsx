@@ -8,6 +8,8 @@ type WordmarkScrollStageProps = {
   reducedMotion?: boolean;
 };
 
+const wordmarkLogoSrc = `${import.meta.env.BASE_URL}brand/asset-1-2x.png`;
+
 const WordmarkScrollStage: React.FC<WordmarkScrollStageProps> = ({ reducedMotion = false }) => {
   const stageRef = React.useRef<HTMLElement>(null);
   const cardRef = React.useRef<HTMLDivElement>(null);
@@ -105,7 +107,7 @@ const WordmarkScrollStage: React.FC<WordmarkScrollStageProps> = ({ reducedMotion
           </div>
 
           <div className="ml-wordmark-display" aria-label="MAD LABS identity wordmark">
-            <img src="/brand/asset-1-2x.png" alt="MAD LABS logo" className="ml-wordmark-logo-image" />
+            <img src={wordmarkLogoSrc} alt="MAD LABS logo" className="ml-wordmark-logo-image" />
           </div>
 
           <div className="ml-wordmark-foot">

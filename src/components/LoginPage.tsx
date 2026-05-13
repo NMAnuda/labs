@@ -1,6 +1,9 @@
 import { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const brandMarkSrc = `${import.meta.env.BASE_URL}brand/asset-7-custom-2x.png`;
+const brandWordmarkSrc = `${import.meta.env.BASE_URL}brand/asset-1-wordmark-2x.png`;
+
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -18,8 +21,8 @@ const LoginPage = () => {
       <header className="ml-nav-wrap ml-login-nav-wrap">
         <div className="ml-nav-shell">
           <Link to="/" className="ml-brand" aria-label="MAD LABS home">
-            <img src="/brand/asset-7-custom-2x.png" alt="" className="ml-brand-mark" />
-            <img src="/brand/asset-1-wordmark-2x.png" alt="MAD LABS" className="ml-brand-wordmark" />
+            <img src={brandMarkSrc} alt="" className="ml-brand-mark" />
+            <img src={brandWordmarkSrc} alt="MAD LABS" className="ml-brand-wordmark" />
           </Link>
           <nav className="ml-nav-links" aria-label="Login links">
             <a href="#signin" className="ml-nav-link">
